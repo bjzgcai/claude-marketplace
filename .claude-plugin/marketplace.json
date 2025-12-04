@@ -1,0 +1,13 @@
+{
+"name": "carter-marketplace",
+"owner": {
+"name": "ZGC Carter"
+},
+"plugins": [
+{
+  "name": "useful-plugin",
+  "source": "./useful-plugin",
+  "description": "minimal plugin for everyday use"
+}
+]
+}
