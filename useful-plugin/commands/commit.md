@@ -1,5 +1,5 @@
 ---
-model: claude-3-5-haiku-20241022
+model: claude-haiku-4-5-20251001 
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*)
 description: Create a git commit in angular convention
 ---
