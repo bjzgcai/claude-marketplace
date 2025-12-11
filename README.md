@@ -121,11 +121,31 @@ Retrieve up-to-date documentation and code examples for any library:
 
 1. Clone the marketplace:
 ```bash
-git clone https://github.com/your-username/carter-marketplace.git
-cd carter-marketplace
+git clone git@github.com:bjzgcai/claude-marketplace.git
+claude
 ```
 
-2. The plugins are ready to use! No additional configuration needed.
+2. Add the marketplace to Claude Code:
+```
+/plugin marketplace add ./claude-marketplace
+```
+
+3. Install the plugin you want:
+```
+/plugin install useful-plugin@claude-marketplace
+```
+
+4. Select "Install now" when prompted.
+
+5. Restart Claude Code to activate the plugin.
+
+6. Verify installation by checking available commands:
+```
+/help
+```
+You should see the new commands, agents, and skills from the plugin listed.
+
+7. Start using the features! Try the `/commit` command, invoke agents like `code-review`, or use skills like `frontend-design`.
 
 ### Using Plugins
 
