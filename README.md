@@ -147,6 +147,15 @@ You should see the new commands, agents, and skills from the plugin listed.
 
 7. Start using the features! Try the `/commit` command, invoke agents like `code-review`, or use skills like `frontend-design`.
 
+### Update Plugins
+
+quickest way: 
+```
+claude plugin disable useful-plugin && claude plugin enable useful-plugin && claude
+```
+
+
+
 ### Using Plugins
 
 Plugins in this marketplace follow the Claude Code plugin structure:
