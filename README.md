@@ -213,7 +213,7 @@ Want to add your own plugin to the marketplace?
 
 ## 📝 License
 
-See individual plugin licenses for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Credits
 
