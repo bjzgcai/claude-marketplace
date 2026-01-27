@@ -121,18 +121,18 @@ Retrieve up-to-date documentation and code examples for any library:
 
 1. Clone the marketplace:
 ```bash
-git clone git@github.com:bjzgcai/claude-marketplace.git
+git clone git@github.com:bjzgcai/carter-marketplace.git
 claude
 ```
 
 2. Add the marketplace to Claude Code:
 ```
-/plugin marketplace add ./claude-marketplace
+/plugin marketplace add ./carter-marketplace
 ```
 
 3. Install the plugin you want:
 ```
-/plugin install useful-plugin@claude-marketplace
+/plugin install useful-plugin@carter-marketplace
 ```
 
 4. Select "Install now" when prompted.
