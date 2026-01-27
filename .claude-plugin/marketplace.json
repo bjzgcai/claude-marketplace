@@ -7,7 +7,7 @@
 {
   "name": "useful-plugin",
   "source": "./useful-plugin",
-  "description": "minimal plugin for everyday use"
+  "description": "A useful plugin featuring Ralph Wiggum technique - continuous self-referential AI loops for interactive iterative development, plus custom commands and agents"
 }
 ]
 }

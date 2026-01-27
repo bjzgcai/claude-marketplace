@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Platform-aware stop hook wrapper
+# This script detects the platform and runs the appropriate stop hook implementation
+
+# Detect platform
+if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
+  # Unix-like system (Linux, macOS, WSL)
+  HOOK_SCRIPT="$(dirname "$0")/stop-hook.sh"
+  if [ -f "$HOOK_SCRIPT" ]; then
+    exec "$HOOK_SCRIPT" "$@"
+  else
+    echo "Error: stop-hook.sh not found" >&2
+    exit 1
+  fi
+elif [ -n "$PSModulePath" ]; then
+  # PowerShell environment
+  HOOK_SCRIPT="$(dirname "$0")/stop-hook.ps1"
+  if [ -f "$HOOK_SCRIPT" ]; then
+    if command -v pwsh &> /dev/null; then
+      exec pwsh -ExecutionPolicy Bypass -File "$HOOK_SCRIPT" "$@"
+    elif command -v powershell &> /dev/null; then
+      exec powershell -ExecutionPolicy Bypass -File "$HOOK_SCRIPT" "$@"
+    else
+      echo "Error: PowerShell not found" >&2
+      exit 1
+    fi
+  else
+    echo "Error: stop-hook.ps1 not found" >&2
+    exit 1
+  fi
+else
+  # Default to bash implementation
+  HOOK_SCRIPT="$(dirname "$0")/stop-hook.sh"
+  if [ -f "$HOOK_SCRIPT" ]; then
+    exec "$HOOK_SCRIPT" "$@"
+  else
+    echo "Error: Unable to detect platform and find appropriate stop hook" >&2
+    exit 1
+  fi
+fi
